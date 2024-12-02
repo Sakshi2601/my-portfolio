@@ -1,0 +1,159 @@
+:root {
+  --text-color-light: #222;
+  --text-color-dark: #fff;
+  --background-light: #f5f5f5;
+  --background-dark: #222;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #333333;
+  --border-gradient: linear-gradient(to right, #2c98f0, #f9bf3f, #e91e63); /* Blue, orange, pink */
+}
+
+[data-theme="dark"] {
+  --text-color: var(--text-color-dark);
+  --background-color: var(--background-dark);
+  --card-bg: var(--card-bg-dark);
+}
+
+[data-theme="light"] {
+  --text-color: var(--text-color-light);
+  --background-color: var(--background-light);
+  --card-bg: var(--card-bg-light);
+}
+
+.internships {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.internships-body {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.internship-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.internship-image {
+  width: 100%;
+  height: 500px;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.internship-right {
+  flex: 2;
+  margin-left: 2rem;
+}
+
+.internship-right > h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Internship Card */
+.internship-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  background-color: var(--card-bg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Gradient Border at the Bottom */
+.internship-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--border-gradient);
+  border-radius: 0 0 10px 10px;
+}
+
+/* Hover Effects */
+.internship-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image inside the card */
+.interncard-img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.interncard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Card Text Details */
+.internship-details {
+  margin-left: 1rem;
+  color: var(--text-color);
+}
+
+.internship-details > h6 {
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.internship-details > h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.internship-details > h5 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.internship-details > p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .internships-body {
+    flex-direction: column;
+  }
+
+  .internship-left {
+    margin-bottom: 2rem;
+  }
+
+  .internship-right {
+    margin-left: 0;
+  }
+}
